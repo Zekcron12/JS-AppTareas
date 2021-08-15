@@ -1,0 +1,363 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  /* variables */
+  --letra-color: #63cdff;
+  --element-color: #1E1C1C;
+  --dark-box-shadow: -7px -7px 10px -10px rgba(255, 255, 255, 0.05),
+        			 -4px -4px 5px 0px rgba(255, 255, 255, 0.05),
+       				  7px 7px 10px 0px rgba(0, 0, 0, 0.5),
+				      4px 4px 5px 0px rgba(0, 0, 0, 0.5),
+				      inset 0px 0px 0px 0px rgba(255, 255, 255, 0.05),
+				      inset 0px 0px 0px 0px rgba(255, 255, 255, 0.05),
+				      inset 0px 0px 0px 0px rgba(255, 255, 255, 0.05),
+				      inset 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+	--input-box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.1),
+											inset 2px 2px 6px rgba(0, 0, 0, 0.8);
+}
+body {
+	width: 100%;
+	background-color: #232020;
+}
+/* ******************************* Encabezado *******************************  */
+.container-nav {
+	position: relative;
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 10px 20px;
+	border-bottom: 1px solid #63cdff /*#515151*/;
+	background-color: #171515;
+}
+.container-nav ul, .list-task {
+	list-style:none;
+}
+.container-nav li a {
+	font-size: 30px;
+	text-decoration: none;
+	font-weight: 500;
+	letter-spacing: 1px;
+	color: #fff;
+	text-shadow: #fff 1px 1px 3px;
+}
+/* ******************************* End - Encabezado *******************************  */
+
+/* ******************************* Input y button *******************************  */
+.container-main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	position: relative;
+}
+.main-form {
+	display: flex;
+	flex-direction: column;
+}
+.main-form input {
+	max-width: 800px;
+	width: 800px;
+	height: 40px;
+	margin-bottom: 20px;
+	padding: 0px 0px 0px 10px;
+	border: none;
+	outline: none;
+	border-radius: 10px;
+	color: var(--letra-color);
+	background-color: var(--element-color);
+	box-shadow: var(--input-box-shadow);
+}
+.error::placeholder { /*estilos para validación del input*/
+  color: #FF1E36 !important;
+}
+.main-form input::placeholder{
+	color: #fff);
+}
+.main-button {
+	display: block;
+	width: 120px;
+	height: 30px;
+	border:none;
+	border-radius: 10px;
+	cursor: pointer;
+	color: var(--letra-color);
+	background-color: var(--element-color);
+	box-shadow: var(--dark-box-shadow);
+}
+.main-button:hover, .modal .boton-popup:hover {
+	color: #81D7FF;
+	background-color: #161414;
+	transition: 0.5s ease;
+}
+/* ******************************* End - Input y button *******************************  */
+
+/* ******************************* Lista de Tareas *******************************  */
+.container-list {
+  width: 800px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 15px 0px 15px;
+  border-radius: 10px;
+  box-shadow: var(--dark-box-shadow);
+  color: var(--letra-color);
+  background-color: var(--element-color);
+}
+.checkbox{
+  color: #000;
+  background-color: #04A75A !important;
+  transition: all 0.3s ease;  
+}
+.span {
+	width: 620px;
+  padding: 8px 10px;
+  text-align: justify;
+}
+.list-icon a {
+  position: relative;
+	margin-right: 25px;
+	color: #36FF00;
+  color: #F7FF03;
+  text-decoration: none;
+}
+.list-icon .fa-trash-alt {
+	color: #FF2020;
+  cursor: pointer;
+}
+.list-input {
+  position: relative;
+  display: flex;
+  cursor: pointer;
+}
+.list-input:hover .tooltips {
+  display: block;
+}
+.tooltips {
+  position: absolute;
+  z-index: 500;
+  display: none;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 20px;
+  padding: 5px 10px;
+  left: -10px;
+  bottom: 30px;
+  border-radius: 10px;
+  color: #04A75A;
+  background-color: var(--element-color);
+  box-shadow: var(--dark-box-shadow);
+}
+.tooltips span {
+  text-decoration: none;
+}
+.tooltips::after {
+  display: block;
+  position: absolute;
+  content: '';
+  border-top: 12px solid var(--element-color);
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+}
+
+/* ******************************* End - Lista de Tareas *******************************  */
+
+/* ******************************* Popu Up - Modal *******************************  */
+.container-modal {
+	position: fixed;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  background-color: rgba(0, 0, 0, 0.9);
+  opacity: 0;
+}
+.show {
+  pointer-events: auto;
+  opacity: 1;
+}
+.modal {
+	position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 600px;
+  height: 300px;
+  max-width: 90%;
+  padding: 35px 15px 15px 15px;
+  border-radius: 10px;
+  color: #fff;
+  box-shadow: var(--input-box-shadow);
+  background-color: var(--element-color);
+}
+h1 {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  color: #63cdff;
+  margin: 0px 0px 30px 0px;
+  padding: 0px 0px 0px 10px;
+}
+.modal input {
+  height: 120px;
+  padding: 0px 0px 0px 10px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: var(--letra-color);
+  background-color: var(--element-color);
+  box-shadow: var(--input-box-shadow);
+}
+.modal .boton-popup, .boton-popup-cancel {
+	position: absolute;
+	display: block;
+	width: 120px;
+	height: 30px;
+	bottom: 12px;
+  right: 150px;
+	border: hidden;
+	border-radius: 5px;
+	outline: none;
+  cursor: pointer;
+	color: var(--letra-color);
+	box-shadow: var(--dark-box-shadow);
+	background-color: var(--element-color);
+}
+.boton-popup-cancel {
+  right: 12px;
+}
+/* ******************************* End - Modal *******************************  */
+
+/* ******************************* Responsivo *******************************  */
+@media screen and (max-width: 820px) {
+  .main-form input, .container-list {
+  	max-width: 600px;
+  	transition: 0.8s ease !important;
+  }
+  .list-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+  .list-icon a {
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 620px) {
+  .main-form input, .container-list {
+  	max-width: 480px;
+  	transition: 0.8s ease;
+  }
+  .list-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+  .list-icon a {
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .main-form input, .container-list {
+  	max-width: 380px;
+  	transition: 0.8s ease;
+  }
+  .list-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+  .list-icon a {
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .main-form input, .container-list {
+  	max-width: 300px;
+  	transition: 0.8s ease;
+  }
+  .list-icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+  }
+  .list-icon a {
+    margin-right: 10px;
+    margin-left: 5px;
+  }
+}
+/* ******************************* Responsivo *******************************  */
+
+
+
+
+/*-------------------- Boton de redes sociales --------------------*/
+.container-button{
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+}
+.button-main{
+  display: none;
+}
+.redes a, .button-secondary label, .redes input {
+  display: block;
+  text-decoration: none;
+  background: #000;
+  color: #fff;
+  width: 1.875rem;
+  height: 1.875rem;
+  line-height: 1.875rem;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 500ms ease;
+}
+.redes a, .redes input{
+  margin-bottom: -0.938rem;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 0.75rem;
+}
+.redes a:hover{
+  background: #00FF2E;
+  color: #000;
+}
+.button-main:checked~ .redes a{
+  margin-bottom: 0.625rem;
+  opacity: 1;
+  visibility: visible;
+}
+/* ~ selecciona el ítem que 
+esté inmediatamente después 
+y todos los siguientes*/
+.button-secondary label{
+  cursor: pointer;
+  background: #000;
+  font-size: 1.25rem;
+}
+.button-main:checked~ .button-secondary label{
+  transform: rotate(135deg);
+  font-size: 1.25rem;
+}
+/*-------------------- Fin de Boton de redes sociales --------------------*/

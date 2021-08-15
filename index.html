@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1B7578">
+  <meta name="description" content="">
+  <meta name="author" content="ZKC">
+  <meta name="copyright" content="Todos los derechos reservados © a '' ">
+
+  <title>App Tareas - JS</title>
+
+  <script src="https://kit.fontawesome.com/c3a0547943.js" crossorigin="anonymous"></script>
+
+  <link rel="icon" type="image/png" href="img/js.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <nav class="container-nav">
+    <ul>
+      <li><a href="#">TAREAS</a></li>
+    </ul>
+  </nav>
+
+  <main class="container-main">
+    <form action="submit-task" class="main-form" id="IDform">
+      <input type="text" name="task" id="IDinput" placeholder="Escriba su Tarea" value="" autocomplete="off">
+      <button class="main-button" id="IDbutton">Agregar</button>
+    </form>
+
+    <ul class="list-task" id="IDlist">
+      <!--<li>
+        <div class="container-list" id="colorFecht">
+          <span class="span">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span>
+          <div class="list-input">
+            <span class="tooltips">Hecho</span>
+            <input type="checkbox" id="fecht">
+          </div>
+          <div class="list-icon">
+            <a href="#" id="open">
+              <i class="fas fa-pen"></i>
+            </a>
+            <i class="fas fa-trash-alt"></i>
+          </div>
+        </div>
+      </li>-->
+    </ul>
+  </main>
+
+  <section id="modal" class="container-modal">
+    <div class="modal">
+      <h1>Actualizar Tarea</h1>
+      <input type="text" name="textActualizar" placeholder="Escriba su nueva Tarea" autocomplete="off">
+      <button id="IDnew" class="boton-popup">Actualizar</button>
+      <button class="boton-popup-cancel">Cancelar</button>
+    </div>
+  </section>
+
+
+
+  <!-------------------- Boton de redes sociales -------------------->
+  <section>
+    <div class="container-button">
+       <input type="checkbox" class="button-main" id="button-main">
+
+       <div class="redes">
+        <a href="https://facebook.com/AlfredCallejero" target="_blank" class="fa fa-facebook"></a>
+        <a href="https://twitter.com/Alfred17_" target="_blank" class="fa fa-twitter"></a>
+        <a href="https://instagram.com/barragan.alfred12" target="_blank" class="fa fa-instagram"></a>
+       </div>
+
+       <div class="button-secondary">
+          <label for="button-main" class="fa fa-plus"></label>
+       </div>
+    </div>
+  </section>
+  <!-------------------- Fin - Boton de redes sociales -------------------->
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.0/firebase-firestore.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyAf_o46E-cyan38OfhMHsBaURxOFoFSz-Y",
+      authDomain: "zkc-tareas.firebaseapp.com",
+      projectId: "zkc-tareas",
+      storageBucket: "zkc-tareas.appspot.com",
+      messagingSenderId: "734034495261",
+      appId: "1:734034495261:web:22fc6f54d35b597d1083f4",
+      measurementId: "G-4VJTXC1Z8G"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    var db = firebase.firestore();
+  </script>
+  <script src="js/main.js"></script>
+  <!--<script>document.oncontextmenu = function(){return false;}</script>--> <!--Bloquear -->
+</body>
+</html>

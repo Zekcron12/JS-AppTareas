@@ -1,0 +1,24 @@
+{
+  "name": "Aplicación de Tareas - ZKC",
+  "short_name": "Tareas App",
+  "description": "Bienvenid@s al Progressive Web Apps de Tareas App",
+  "background_color": "#131319",
+  "theme_color": "#1B7578",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "./?utm_source=web_app_manifest",
+  "scope": "./",
+  "lang": "es-ARG",
+  "icons": [
+    {
+      "src": "./img/logoapptarea.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "./img/logoapptarea.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}
