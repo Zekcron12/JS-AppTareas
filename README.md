@@ -5,8 +5,8 @@
 <p align="center">
 El funcionamiento de la aplicación consta de agregar una tarea con opción de checkbox cuando esté realizada y una opción de editar y borrar. La aplicación tiene como base de datos la tecnología que ofrece Firebase. El proyecto tiene solo fines prácticos de JavaScript.</p>
 
-# Progressive Web Apps - (PWA)
+## Progressive Web Apps - (PWA)
 <p align="center">Al proyecto se le dio una nueva versión, agregándole la tecnología PWA para que se pueda instalar y cumplir el rol como cualquier aplicación nativa.</p>
 
-# Versión
+## Versión
 ✦ 1.2
